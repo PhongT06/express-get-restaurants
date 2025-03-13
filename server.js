@@ -4,8 +4,10 @@ const port = 3000;
 
 //TODO: Create your GET Request Route Below: 
 
-
-app.listen(port, () => {
-    db.sync();
-    console.log(`Listening at http://localhost:${port}/restaurants`);
-})
+if (require.main === module) {
+    const port = 3000;
+    app.listen(port, () => {
+        db.sync();
+        console.log(`Listening at http://localhost:${port}/restaurants`);
+    });
+}
